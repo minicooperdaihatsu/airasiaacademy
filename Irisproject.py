@@ -3,7 +3,8 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import pickle
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB 
+modelGaussianIris = GaussianNB() 
 
 st.write("# Simple Iris Flower Prediction App")
 st.write("This app predicts the **Iris flower** type!")
@@ -27,9 +28,9 @@ df = user_input_features()  #call user defined function
 st.subheader('User Input parameters')
 st.write(df)
 
-loaded_model = pickle.load(open("Iris.h5", "rb"))
+loaded_model = pickle.load(open("modelGaussianIris.h5", "rb"))
 prediction = loaded_model.predict(df)
-#prediction_proba = loaded_model.predict_proba(df)
+prediction_proba = loaded_model.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
 st.write(Y.unique())
@@ -37,5 +38,5 @@ st.write(Y.unique())
 st.subheader('Prediction')
 st.write(prediction)
 
-#st.subheader('Prediction Probability')
-#st.write(prediction_proba)
+st.subheader('Prediction Probability')
+st.write(prediction_proba)
