@@ -27,10 +27,9 @@ df = user_input_features()  #call user defined function
 st.subheader('User Input parameters')
 st.write(df)
 
-
-loaded_model = pickle.load(open("Iris.h5", "rb"))
-prediction = loaded_model.predict(df)
-#prediction_proba = loaded_model.predict_proba(df)
+modelknn = pickle.load(open("Iris.h5", "rb"))
+prediction = modelknn.predict(df)
+#prediction_proba = modelknn.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
 st.write(Y.unique())
