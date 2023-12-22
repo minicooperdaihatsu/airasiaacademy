@@ -33,8 +33,5 @@ st.write(Y.unique())
 st.subheader('Prediction')
 st.write(prediction)
 
-st.subheader('Prediction Probability')
-st.write(prediction_proba)
-
 if __name__ == "__main__":
     main()
