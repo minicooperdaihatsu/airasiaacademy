@@ -27,11 +27,5 @@ def user_input_features():
     species_mapping = {0: 'Setosa', 1: 'Versicolor', 2: 'Virginica'}
     st.write(f"Predicted Iris Species: {species_mapping[prediction]}")
 
-st.subheader('Class labels and their corresponding index number')
-st.write(Y.unique())
-
-st.subheader('Prediction')
-st.write(prediction)
-
 if __name__ == "__main__":
     main()
