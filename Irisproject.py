@@ -30,7 +30,7 @@ st.write(df)
 
 loaded_model = pickle.load(open("modelGaussianIris.h5", "rb"))
 prediction = loaded_model.predict(df)
-prediction_proba = loaded_model.predict_proba(df)
+#prediction_proba = loaded_model.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
 st.write(Y.unique())
@@ -38,5 +38,5 @@ st.write(Y.unique())
 st.subheader('Prediction')
 st.write(prediction)
 
-st.subheader('Prediction Probability')
-st.write(prediction_proba)
+#st.subheader('Prediction Probability')
+#st.write(prediction_proba)
